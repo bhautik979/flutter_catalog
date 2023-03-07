@@ -4,7 +4,7 @@ import 'package:flutter_catalog/Pages/login_page.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -13,9 +13,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      themeMode: ThemeMode.dark, //
+      themeMode: ThemeMode.light, //
       theme: ThemeData(
-          primarySwatch: Colors.lightGreen,
+          primarySwatch: Colors.blue,
           fontFamily: GoogleFonts.lato().fontFamily,
           ),
       darkTheme: ThemeData(brightness: Brightness.dark),
