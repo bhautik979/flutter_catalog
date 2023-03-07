@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_catalog/utils/routes.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class LoginPage extends StatelessWidget {
@@ -7,49 +8,49 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
-      color: Colors.white,
+        color: Colors.white,
         child: Column(
-      children: [
-        Image.asset("assets/image/login_image.png", fit: BoxFit.cover),
-        const SizedBox(
-          height: 20.0,
-        ),
-        Text("Welcome",
-            style: TextStyle(
-              fontSize: 25,
-              fontWeight: FontWeight.bold,
-            )),
-        const SizedBox(
-          height: 20.0,
-        ),
-        Padding(
-          padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-          child: Column(
-            children: [
-              TextFormField(
-                  decoration: InputDecoration(
-                labelText: "Username",
-              )),
-              TextFormField(
-                obscureText: true,
-                decoration: const InputDecoration(
-                  labelText: "Password",
-                ),
+          children: [
+            Image.asset("assets/image/login_image.png", fit: BoxFit.cover),
+            const SizedBox(
+              height: 20.0,
+            ),
+            Text("Welcome",
+                style: TextStyle(
+                  fontSize: 25,
+                  fontWeight: FontWeight.bold,
+                )),
+            const SizedBox(
+              height: 20.0,
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+              child: Column(
+                children: [
+                  TextFormField(
+                      decoration: InputDecoration(
+                    labelText: "Username",
+                  )),
+                  TextFormField(
+                    obscureText: true,
+                    decoration: const InputDecoration(
+                      labelText: "Password",
+                    ),
+                  ),
+                ],
               ),
-            ],
-          ),
-        ),
-        SizedBox(
-          height: 20.0,
-        ),
-        ElevatedButton(
-          child: Text("Login"),
-          style: TextButton.styleFrom(),
-          onPressed: () {
-            print("Hi codepur");
-          },
-        ),
-      ],
-    ));
+            ),
+            SizedBox(
+              height: 20.0,
+            ),
+            ElevatedButton(
+              child: Text("Login"),
+              style: TextButton.styleFrom(minimumSize: Size(150, 40)),
+              onPressed: () {
+                Navigator.pushNamed(context, MyRoutes.homeroute);
+              },
+            ),
+          ],
+        ));
   }
 }
