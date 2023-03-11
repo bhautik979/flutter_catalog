@@ -30,7 +30,7 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Material(
-      color: Colors.white,
+      color: Color.fromARGB(255, 255, 255, 255),
       child: SingleChildScrollView(
         child: Column(
           children: [
@@ -73,7 +73,6 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                       onChanged: (value) {
                         password = value;
-                        print(password); //print password in consol
                       },
                       validator: (value) {
                         if (value!.isEmpty) {
@@ -86,7 +85,7 @@ class _LoginPageState extends State<LoginPage> {
                       },
                     ),
                     TextFormField(
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         icon: Icon(Icons.phone_android),
                         labelText: "Phone no",
                       ),
@@ -94,7 +93,7 @@ class _LoginPageState extends State<LoginPage> {
                         if (value!.isEmpty) {
                           return "Mobile number is mendatory";
                         }
-                        if (value!.length > 10 ) {
+                        if (value!.length > 10) {
                           return "Enter valid mobile number";
                         }
                       },
@@ -107,7 +106,7 @@ class _LoginPageState extends State<LoginPage> {
               height: 20.0,
             ),
             Material(
-              borderRadius: BorderRadius.circular(changeButton ? 150 : 8),
+              borderRadius: BorderRadius.circular(changeButton ? 45 : 45),
               color: Colors.blue,
               child: InkWell(
                 onTap: () {
@@ -115,12 +114,12 @@ class _LoginPageState extends State<LoginPage> {
                 },
                 child: AnimatedContainer(
                   duration: Duration(seconds: 1),
-                  width: changeButton ? 50 : 150,
+                  width: changeButton ? 150 : 150,
                   height: 45,
                   alignment: Alignment.center,
                   child: changeButton
                       ? Icon(Icons.done)
-                      : Text(
+                      : const Text(
                           "Login",
                           style: TextStyle(color: Colors.white, fontSize: 19),
                         ),
@@ -128,48 +127,9 @@ class _LoginPageState extends State<LoginPage> {
               ),
             ),
           ],
-
-          // InkWell(
-          //   onTap: () async {
-          //     setState(() {
-          //       changeButton = true;
-          //     });
-          //     await Future.delayed(Duration(seconds: 1));
-          //     Navigator.pushNamed(context, MyRoutes.homeroute);
-          //   },
-          //   child: AnimatedContainer(
-          //     duration: Duration(microseconds: 100),
-          //     height: 50,
-          //     width: changeButton ? 50 : 150,
-          //     alignment: Alignment.center,
-          //     child: changeButton
-          //         ? Icon(
-          //             Icons.done,
-          //             color: Colors.white,
-          //           )
-          //         : Text(
-          //             "Login",
-          //             style: TextStyle(
-          //                 color: Colors.white,
-          //                 fontWeight: FontWeight.bold,
-          //                 fontSize: 18),
-          //           ),
-          //     decoration: BoxDecoration(
-          //       color: Colors.blue,
-          //       // shape: changeButton? BoxShape.circle:BoxShape.rectangle
-          //       borderRadius: BorderRadius.circular(changeButton ? 50 : 8),
-          //     ),
-          //   ),
-          // ),
-          // ElevatedButton(
-          //   child: Text("Login"),
-          //   style: TextButton.styleFrom(minimumSize: Size(150, 40)),
-          //   onPressed: () {
-          //     Navigator.pushNamed(context, MyRoutes.homeroute);
-          //   },
-          // ),
         ),
       ),
     );
   }
 }
+
